@@ -3,6 +3,8 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import numpy as np
 
+import webbrowser
+
 # loading the saved models
 
 diabetes_model = pickle.load(open(r"C:/Users/hp/Documents/Downloads/Multiple Disease Prediction System/saved models/diabetes_model.sav", 'rb'))
@@ -70,6 +72,8 @@ if (selected == 'Diabetes Prediction'):
         
         if (diab_prediction[0] == 1):
           diab_diagnosis = 'The person is diabetic'
+          webbrowser.open(
+              'https://www.google.com/maps/search/endocrinologist+near+me/@22.7612536,75.8882503,15z/data=!3m1!4b1')
         else:
           diab_diagnosis = 'The person is not diabetic'
         
@@ -136,6 +140,8 @@ if (selected == 'Heart Disease Prediction'):
         
         if (heart_prediction[0] == 1):
           heart_diagnosis = 'The person is having heart disease'
+          webbrowser.open(
+              'https://www.google.com/maps/search/cardiologist+near+me/@22.7612927,75.8882503,15z/data=!3m1!4b1')
         else:
           heart_diagnosis = 'The person does not have any heart disease'
         
@@ -229,6 +235,8 @@ if (selected == "Parkinsons Prediction"):
         
         if (parkinsons_prediction[0] == 1):
           parkinsons_diagnosis = "The person has Parkinson's disease"
+          webbrowser.open(
+              'https://www.google.com/maps/search/neurologist+near+me/@22.7613318,75.8882503,15z/data=!3m1!4b1')
         else:
           parkinsons_diagnosis = "The person does not have Parkinson's disease"
         
